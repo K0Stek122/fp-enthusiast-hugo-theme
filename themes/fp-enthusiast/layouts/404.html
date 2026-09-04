@@ -1,0 +1,9 @@
+{{ define "main" }}
+<section class="notfound">
+  <p class="notfound__code" aria-hidden="true">404</p>
+  <h1 class="notfound__title">{{ T "pageNotFound" | default "Page not found" }}</h1>
+  <hr class="rule">
+  <p>{{ T "notFoundBody" | default "That note has wandered off the page. Try the front door." }}</p>
+  <p><a class="view-all" href="{{ "/" | relURL }}">{{ site.Title }} &rarr;</a></p>
+</section>
+{{ end }}

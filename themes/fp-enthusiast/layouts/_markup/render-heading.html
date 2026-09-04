@@ -1,0 +1,4 @@
+<h{{ .Level }} id="{{ .Anchor }}" class="prose__h">
+  {{ .Text | safeHTML }}
+  <a class="prose__anchor" href="#{{ .Anchor }}" aria-label="{{ printf (T "anchorLabel" | default "Link to section: %s") (.PlainText | plainify) }}">#</a>
+</h{{ .Level }}>

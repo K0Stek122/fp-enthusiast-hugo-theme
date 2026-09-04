@@ -1,0 +1,33 @@
+{{ define "main" }}
+<article class="post">
+  <header class="post__head">
+    {{ with .CurrentSection }}<a class="back" href="{{ .RelPermalink }}">&larr; {{ T "backToPosts" | default "Back to notes" }}</a>{{ end }}
+    <nav class="crumbs" aria-label="{{ T "breadcrumb" | default "Breadcrumb" }}">
+      <a href="{{ "/" | relURL }}">{{ site.Title }}</a>
+      {{ with .CurrentSection }}{{ if ne .Permalink site.Home.Permalink }}
+      <span aria-hidden="true">/</span><a href="{{ .RelPermalink }}">{{ .Title }}</a>{{ end }}{{ end }}
+    </nav>
+    <h1 class="post__title">{{ .Title }}</h1>
+    <div class="post__meta-row">
+      {{ partial "post-meta.html" . }}
+      {{ with .GetTerms "tags" }}
+      <ul class="tags tags--inline" aria-label="{{ T "tags" | default "Tags" }}">
+        {{ range . }}<li><a href="{{ .RelPermalink }}">{{ .Page.Title }}</a></li>{{ end }}
+      </ul>
+      {{ end }}
+    </div>
+  </header>
+
+  <hr class="rule rule--left">
+
+  <div class="prose">{{ .Content }}</div>
+
+  <footer class="post__foot">
+    <hr class="post-foot-rule">
+    <nav class="post-nav" aria-label="{{ T "postNav" | default "More posts" }}">
+      {{ with .PrevInSection }}<a class="post-nav__prev" href="{{ .RelPermalink }}" rel="prev"><span class="post-nav__label">{{ T "prevPost" | default "Previous" }}</span><span class="post-nav__title">{{ .Title }}</span></a>{{ else }}<span></span>{{ end }}
+      {{ with .NextInSection }}<a class="post-nav__next" href="{{ .RelPermalink }}" rel="next"><span class="post-nav__label">{{ T "nextPost" | default "Next" }}</span><span class="post-nav__title">{{ .Title }}</span></a>{{ else }}<span></span>{{ end }}
+    </nav>
+  </footer>
+</article>
+{{ end }}

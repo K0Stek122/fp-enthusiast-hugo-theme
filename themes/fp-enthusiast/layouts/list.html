@@ -1,0 +1,47 @@
+{{ define "main" }}
+<div class="list-page">
+  <header class="page-head">
+    <h1 class="page-head__title">{{ .Title }}</h1>
+    {{ with .Content }}<div class="page-head__intro">{{ . }}</div>
+    {{ else }}{{ with .Description }}<p class="page-head__intro">{{ . }}</p>{{ end }}{{ end }}
+  </header>
+
+  <hr class="rule">
+
+  {{ $pages := .Pages }}
+  {{ if .IsHome }}{{ $pages = where site.RegularPages "Type" "in" site.Params.mainSections }}{{ end }}
+  {{ $paginator := .Paginate $pages }}
+
+  {{ with $paginator.Pages }}
+  {{ range .GroupByDate "2006" }}
+  <section class="year-group">
+    <h2 class="year">{{ .Key }}</h2>
+    <ul class="post-list post-list--index">
+      {{ range .Pages }}
+      <li class="post-list__item">
+        <div class="post-list__row">
+          <span class="marker" aria-hidden="true"></span>
+          <a class="post-list__link" href="{{ .RelPermalink }}">{{ .Title }}</a>
+          <time class="post-list__date" datetime="{{ .PublishDate.Format "2006-01-02" }}">{{ .PublishDate.Format "Jan 02" }}</time>
+        </div>
+        {{ with (or .Description .Summary) }}<p class="post-list__excerpt">{{ . | plainify }}</p>{{ end }}
+      </li>
+      {{ end }}
+    </ul>
+  </section>
+  {{ end }}
+
+  {{ if gt $paginator.TotalPages 1 }}
+  <nav class="pagination" aria-label="{{ T "pagination" | default "Pagination" }}">
+    {{ if $paginator.HasPrev }}<a href="{{ $paginator.Prev.URL }}" rel="prev">&larr; {{ T "newer" | default "Newer" }}</a>
+    {{ else }}<span class="pagination__disabled">&larr; {{ T "newer" | default "Newer" }}</span>{{ end }}
+    <span class="pagination__count">{{ $paginator.PageNumber }} / {{ $paginator.TotalPages }}</span>
+    {{ if $paginator.HasNext }}<a href="{{ $paginator.Next.URL }}" rel="next">{{ T "older" | default "Older" }} &rarr;</a>
+    {{ else }}<span class="pagination__disabled">{{ T "older" | default "Older" }} &rarr;</span>{{ end }}
+  </nav>
+  {{ end }}
+  {{ else }}
+  <p class="empty">{{ T "noPosts" | default "Nothing here yet." }}</p>
+  {{ end }}
+</div>
+{{ end }}

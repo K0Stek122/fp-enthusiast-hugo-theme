@@ -1,0 +1,27 @@
+{{- $src := .Destination -}}
+{{- $res := "" -}}
+{{- if not (urls.Parse $src).IsAbs -}}
+  {{- with .PageInner.Resources.Get $src }}{{ $res = . }}
+  {{- else }}{{ with resources.Get $src }}{{ $res = . }}{{ end }}{{ end -}}
+{{- end -}}
+{{- $attrs := "" -}}
+{{- if $res -}}
+  {{- $w1 := int (math.Min $res.Width 960) -}}
+  {{- $w2 := int (math.Min $res.Width 1920) -}}
+  {{- $one := cond (le $res.Width 960) $res ($res.Resize (printf "%dx webp q82" $w1)) -}}
+  {{- $two := cond (eq $w2 $w1) $one ($res.Resize (printf "%dx webp q82" $w2)) -}}
+  {{- $srcset := $one.RelPermalink -}}
+  {{- if ne $two.RelPermalink $one.RelPermalink -}}{{ $srcset = printf "%s %dw, %s %dw" $one.RelPermalink $one.Width $two.RelPermalink $two.Width }}{{- end -}}
+  {{- $attrs = printf `src="%s" width="%d" height="%d"` $one.RelPermalink $one.Width $one.Height -}}
+  {{- if in $srcset " " -}}{{ $attrs = printf `%s srcset="%s" sizes="(min-width: 720px) 680px, 92vw"` $attrs $srcset }}{{- end -}}
+{{- else -}}
+  {{- $attrs = printf `src="%s"` ($src | safeURL) -}}
+{{- end -}}
+{{- $attrs = printf `%s alt="%s"` $attrs (.Text | transform.HTMLEscape) -}}
+{{- with .Title }}{{ $attrs = printf `%s title="%s"` $attrs (. | transform.HTMLEscape) }}{{ end -}}
+{{- $img := printf `<img %s loading="lazy" decoding="async">` $attrs -}}
+{{- if .IsBlock -}}
+<figure class="fig">{{ $img | safeHTML }}{{ with .Title }}<figcaption>{{ . }}</figcaption>{{ end }}</figure>
+{{- else -}}
+{{- $img | safeHTML -}}
+{{- end -}}

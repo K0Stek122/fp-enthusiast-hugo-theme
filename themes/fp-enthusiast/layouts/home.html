@@ -1,0 +1,32 @@
+{{ define "main" }}
+<div class="home">
+  <section class="hero">
+    {{ partial "avatar.html" . }}
+    <h1 class="hero__title">{{ site.Title }}</h1>
+    {{ with (or .Params.tagline site.Params.tagline) }}<p class="hero__tagline">{{ . }}</p>{{ end }}
+  </section>
+
+  <hr class="rule">
+
+  {{ with .Content }}<div class="bio">{{ . }}</div>{{ end }}
+
+  {{ $recent := first 5 (where site.RegularPages "Type" "in" site.Params.mainSections) }}
+  {{ with $recent }}
+  <section class="recent">
+    <h2 class="section-title">{{ T "latestPosts" | default "Recent notes" }}</h2>
+    <ul class="post-list">
+      {{ range . }}
+      <li class="post-list__item">
+        <span class="marker" aria-hidden="true"></span>
+        <a class="post-list__link" href="{{ .RelPermalink }}">{{ .Title }}</a>
+        <time class="post-list__date" datetime="{{ .PublishDate.Format "2006-01-02" }}">{{ .PublishDate.Format "Jan 02" }}</time>
+      </li>
+      {{ end }}
+    </ul>
+    {{ with site.GetPage "/posts" }}
+    <a class="view-all" href="{{ .RelPermalink }}">{{ T "viewAllPosts" | default "View all notes" }}</a>
+    {{ end }}
+  </section>
+  {{ end }}
+</div>
+{{ end }}

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Notes — FP Enthusiast</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#dbd9b7;
+    --tan:#e1c18f;
+    --olive:#7c7254;
+    --navy:#031d42;
+    --wine:#690202;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--navy);
+    font-family:'Inter',sans-serif;
+    font-size:18px;
+    line-height:1.65;
+  }
+  .wrap{
+    max-width:640px;
+    margin:0 auto;
+    padding:0 24px 100px;
+  }
+  nav{
+    display:flex;
+    justify-content:center;
+    gap:36px;
+    padding:36px 0 56px;
+  }
+  nav a{
+    color:var(--navy);
+    text-decoration:none;
+    font-weight:500;
+    font-size:0.95rem;
+    padding-bottom:4px;
+    border-bottom:2px solid transparent;
+  }
+  nav a.active{border-bottom-color:var(--wine); color:var(--wine);}
+  nav a:hover{border-bottom-color:var(--olive);}
+
+  header.page-head{text-align:center; padding-bottom:36px;}
+  h1.page-title{
+    font-family:'Fraunces',serif;
+    font-weight:700;
+    font-size:2.25rem;
+    margin:0 0 10px;
+  }
+  .page-sub{
+    color:var(--olive);
+    margin:0;
+  }
+
+  .rule{
+    height:4px;
+    background:var(--navy);
+    width:64px;
+    margin:36px auto 40px;
+    border:none;
+  }
+
+  h2.year{
+    font-family:'Fraunces',serif;
+    font-weight:600;
+    font-size:1.1rem;
+    color:var(--wine);
+    margin:36px 0 4px;
+  }
+  h2.year:first-of-type{margin-top:0;}
+
+  ul.post-list{
+    list-style:none;
+    margin:0;
+    padding:0;
+  }
+  ul.post-list li{
+    padding:16px 0;
+    border-bottom:1px solid var(--tan);
+  }
+  .entry-top{
+    display:flex;
+    align-items:baseline;
+    gap:14px;
+  }
+  .marker{
+    width:9px; height:9px;
+    background:var(--wine);
+    flex-shrink:0;
+    margin-top:6px;
+  }
+  .post-link{
+    color:var(--navy);
+    text-decoration:none;
+    font-weight:600;
+    flex:1;
+  }
+  .post-link:hover{color:var(--wine);}
+  .post-date{
+    color:var(--olive);
+    font-size:0.85rem;
+    white-space:nowrap;
+  }
+  .excerpt{
+    color:var(--olive);
+    font-size:0.95rem;
+    margin:6px 0 0 23px;
+  }
+
+  .pager{
+    display:flex;
+    justify-content:space-between;
+    margin-top:48px;
+    font-weight:500;
+  }
+  .pager a{
+    color:var(--wine);
+    text-decoration:none;
+  }
+  .pager a:hover{opacity:0.75;}
+  .pager .disabled{color:var(--olive); opacity:0.5;}
+
+  footer{
+    text-align:center;
+    margin-top:64px;
+    color:var(--olive);
+    font-size:0.85rem;
+  }
+  footer a{color:var(--olive);}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="posts.html" class="active">Notes</a>
+    <a href="#">About</a>
+  </nav>
+
+  <header class="page-head">
+    <h1 class="page-title">Notes</h1>
+    <p class="page-sub">All the ink-stained thoughts, in order.</p>
+  </header>
+
+  <hr class="rule">
+
+  <h2 class="year">2026</h2>
+  <ul class="post-list">
+    <li>
+      <div class="entry-top">
+        <span class="marker"></span>
+        <a class="post-link" href="post.html">Why I keep going back to iron gall ink</a>
+        <span class="post-date">Sep 02</span>
+      </div>
+      <p class="excerpt">It stains, it corrodes nibs if you let it, and I still can't quit it — here's why.</p>
+    </li>
+    <li>
+      <div class="entry-top">
+        <span class="marker"></span>
+        <a class="post-link" href="post.html">A week with the Pilot Custom 823</a>
+        <span class="post-date">Aug 27</span>
+      </div>
+      <p class="excerpt">A vacuum filler with a party trick, tested against a week of daily journaling.</p>
+    </li>
+    <li>
+      <div class="entry-top">
+        <span class="marker"></span>
+        <a class="post-link" href="post.html">Tomoe River paper, three years later</a>
+        <span class="post-date">Aug 14</span>
+      </div>
+      <p class="excerpt">How the reformulated stock holds up against the sheets I hoarded in 2023.</p>
+    </li>
+    <li>
+      <div class="entry-top">
+        <span class="marker"></span>
+        <a class="post-link" href="post.html">Restoring a 1940s lever-filler</a>
+        <span class="post-date">Jul 30</span>
+      </div>
+      <p class="excerpt">New sac, new shellac, and a nib that needed far more patience than skill.</p>
+    </li>
+    <li>
+      <div class="entry-top">
+        <span class="marker"></span>
+        <a class="post-link" href="post.html">Cheap pens worth owning</a>
+        <span class="post-date">Jul 09</span>
+      </div>
+      <p class="excerpt">Four pens under twenty pounds that write better than they have any right to.</p>
+    </li>
+  </ul>
+
+  <h2 class="year">2025</h2>
+  <ul class="post-list">
+    <li>
+      <div class="entry-top">
+        <span class="marker"></span>
+        <a class="post-link" href="post.html">A year of one pen, one ink</a>
+        <span class="post-date">Dec 18</span>
+      </div>
+      <p class="excerpt">What I learned from refusing to buy a single new pen for twelve months.</p>
+    </li>
+    <li>
+      <div class="entry-top">
+        <span class="marker"></span>
+        <a class="post-link" href="post.html">Flex nibs, explained without the jargon</a>
+        <span class="post-date">Nov 02</span>
+      </div>
+      <p class="excerpt">Wet-noodle, semi-flex, or just soft — a plain-language guide.</p>
+    </li>
+  </ul>
+
+  <div class="pager">
+    <span class="disabled">&larr; Newer</span>
+    <a href="#">Older &rarr;</a>
+  </div>
+
+  <footer>
+    &copy; 2026 FP Enthusiast &nbsp;·&nbsp; <a href="#">RSS</a> &nbsp;·&nbsp; <a href="#">Contact</a>
+  </footer>
+
+</div>
+</body>
+</html>

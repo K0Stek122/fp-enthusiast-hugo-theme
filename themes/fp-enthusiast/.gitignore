@@ -1,0 +1,9 @@
+/public/
+/exampleSite/public/
+/resources/
+/exampleSite/resources/
+.hugo_build.lock
+.DS_Store
+*.swp
+node_modules/
+.htm-bin/

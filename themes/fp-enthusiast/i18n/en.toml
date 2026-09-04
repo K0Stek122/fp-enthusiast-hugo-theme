@@ -1,0 +1,47 @@
+[skipToContent]
+other = "Skip to content"
+[primaryNav]
+other = "Primary"
+[posts]
+other = "Notes"
+[latestPosts]
+other = "Recent notes"
+[viewAllPosts]
+other = "View all notes"
+[backToPosts]
+other = "Back to notes"
+[toggleTheme]
+other = "Toggle dark mode"
+[updatedOn]
+other = "updated"
+[minRead]
+one = "{{ . }} min read"
+other = "{{ . }} min read"
+[pagination]
+other = "Pagination"
+[newer]
+other = "Newer"
+[older]
+other = "Older"
+[noPosts]
+other = "Nothing here yet."
+[breadcrumb]
+other = "Breadcrumb"
+[tags]
+other = "Tags"
+[postNav]
+other = "More posts"
+[prevPost]
+other = "Previous"
+[nextPost]
+other = "Next"
+[rssFeed]
+other = "RSS"
+[contact]
+other = "Contact"
+[anchorLabel]
+other = "Link to section: %s"
+[pageNotFound]
+other = "Page not found"
+[notFoundBody]
+other = "That note has wandered off the page. Try the front door."

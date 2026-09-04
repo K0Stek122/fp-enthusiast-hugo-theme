@@ -1,0 +1,14 @@
+{{- if not .PublishDate.IsZero -}}
+<p class="post-meta">
+  <time datetime="{{ .PublishDate.Format "2006-01-02" }}">{{ .PublishDate.Format (or site.Params.dateFormat "2 January 2006") }}</time>
+  {{- if gt (.Lastmod.Sub .PublishDate).Hours 24 }}
+  <span class="post-meta__sep" aria-hidden="true">/</span>
+  <span class="post-meta__updated">{{ T "updatedOn" | default "updated" }}
+    <time datetime="{{ .Lastmod.Format "2006-01-02" }}">{{ .Lastmod.Format (or site.Params.dateFormat "2 January 2006") }}</time></span>
+  {{- end }}
+  {{- with .ReadingTime }}
+  <span class="post-meta__sep" aria-hidden="true">/</span>
+  <span class="post-meta__read">{{ i18n "minRead" . | default (printf "%d min read" .) }}</span>
+  {{- end }}
+</p>
+{{- end -}}

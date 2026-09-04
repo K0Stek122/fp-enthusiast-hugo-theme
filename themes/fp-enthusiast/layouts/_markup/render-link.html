@@ -1,0 +1,5 @@
+{{- $u := urls.Parse .Destination -}}
+{{- $external := and $u.IsAbs (ne $u.Hostname (urls.Parse site.BaseURL).Hostname) -}}
+<a href="{{ .Destination | safeURL }}"
+   {{- with .Title }} title="{{ . }}"{{ end }}
+   {{- if $external }} rel="noopener noreferrer external" target="_blank"{{ end }}>{{ .Text | safeHTML }}{{ if $external }}<span class="ext" aria-hidden="true">&#8599;</span>{{ end }}</a>

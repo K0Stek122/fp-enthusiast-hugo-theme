@@ -1,0 +1,19 @@
+<header class="site-header">
+  <div class="site-header__inner">
+    <nav class="site-nav" aria-label="{{ T "primaryNav" | default "Primary" }}">
+      <ul>
+        {{- range site.Menus.main }}
+        {{- $active := or ($.IsMenuCurrent "main" .) ($.HasMenuCurrent "main" .) -}}
+        {{- if and .PageRef (eq .PageRef "/") }}{{ $active = $.IsHome }}{{ end -}}
+        <li><a href="{{ .URL | relLangURL }}"{{ if $active }} class="active" aria-current="page"{{ end }}
+             {{- with .Params.rel }} rel="{{ . }}"{{ end }}>{{ .Name }}</a></li>
+        {{- end }}
+      </ul>
+    </nav>
+    <button type="button" class="theme-toggle" aria-pressed="false"
+            aria-label="{{ T "toggleTheme" | default "Toggle dark mode" }}">
+      <svg class="theme-toggle__sun" width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" fill="currentColor"><circle cx="10" cy="10" r="4"/><g stroke="currentColor" stroke-width="2"><line x1="10" y1="1" x2="10" y2="4"/><line x1="10" y1="16" x2="10" y2="19"/><line x1="1" y1="10" x2="4" y2="10"/><line x1="16" y1="10" x2="19" y2="10"/><line x1="3.5" y1="3.5" x2="5.6" y2="5.6"/><line x1="14.4" y1="14.4" x2="16.5" y2="16.5"/><line x1="3.5" y1="16.5" x2="5.6" y2="14.4"/><line x1="14.4" y1="5.6" x2="16.5" y2="3.5"/></g></svg>
+      <svg class="theme-toggle__moon" width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" fill="currentColor"><path d="M16 12.5A7 7 0 0 1 7.5 4a7 7 0 1 0 8.5 8.5Z"/></svg>
+    </button>
+  </div>
+</header>
