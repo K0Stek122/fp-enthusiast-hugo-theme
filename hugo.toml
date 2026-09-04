@@ -1,37 +1,12 @@
-baseURL = "https://example.org/"
-locale = "en-US"
-title = "FP Enthusiast"
-theme = "fp-enthusiast"
-
+# Theme defaults. Hugo merges this into consuming sites (site values win), so it
+# carries only what the theme needs. Site keys (baseURL/title/locale) are omitted.
 enableRobotsTXT = true
-summaryLength = 30
 
 [pagination]
   pagerSize = 8
 
 [params]
-  description    = "Ink, nibs, and paper — notes from a fountain pen habit."
-  tagline        = "Ink, nibs, and paper — notes from a fountain pen habit"
-  author         = "FP Enthusiast"
-  email          = "hello@example.com"
-  mainSections   = ["posts"]
-  dateFormat     = "2 January 2006"
-  titleSeparator = "·"
-  footerText     = "Written by hand. Set in Fraunces & Inter."
-
-[menus]
-  [[menus.main]]
-    name = "Home"
-    pageRef = "/"
-    weight = 10
-  [[menus.main]]
-    name = "Notes"
-    pageRef = "/posts"
-    weight = 20
-  [[menus.main]]
-    name = "About"
-    pageRef = "/about"
-    weight = 30
+  mainSections = ["posts"]
 
 [taxonomies]
   tag = "tags"

@@ -6,7 +6,7 @@
 
 <br />
 <div align="center">
-  <a href="https://github.com/kamilianos/fp-enthusiast">
+  <a href="https://github.com/K0Stek122/fp-enthusiast-hugo-theme">
     <img src="images/logo.png" alt="FP Enthusiast logo" width="96" height="96">
   </a>
 
@@ -19,11 +19,11 @@
     <a href="#usage"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://fp-enthusiast.netlify.app">View Demo</a>
+    <a href="https://fp-enthusiast-hugo-theme.netlify.app">View Demo</a>
     &middot;
-    <a href="https://github.com/kamilianos/fp-enthusiast/issues/new?labels=bug">Report Bug</a>
+    <a href="https://github.com/K0Stek122/fp-enthusiast-hugo-theme/issues/new?labels=bug">Report Bug</a>
     &middot;
-    <a href="https://github.com/kamilianos/fp-enthusiast/issues/new?labels=enhancement">Request Feature</a>
+    <a href="https://github.com/K0Stek122/fp-enthusiast-hugo-theme/issues/new?labels=enhancement">Request Feature</a>
   </p>
 </div>
 
@@ -50,7 +50,7 @@
 
 ## About The Project
 
-[![FP Enthusiast screenshot][product-screenshot]](https://fp-enthusiast.netlify.app)
+[![FP Enthusiast screenshot][product-screenshot]](https://fp-enthusiast-hugo-theme.netlify.app)
 
 **FP Enthusiast** is a Hugo theme for a personal notebook-style blog. It grew out
 of a hand-built HTML mockup for a fountain-pen journal and keeps that design's
@@ -97,7 +97,7 @@ priorities:
 **As a Git submodule**
 
 ```sh
-git submodule add https://github.com/kamilianos/fp-enthusiast themes/fp-enthusiast
+git submodule add https://github.com/K0Stek122/fp-enthusiast-hugo-theme themes/fp-enthusiast
 ```
 
 **As a Hugo Module** (in your site's `hugo.toml`)
@@ -105,17 +105,17 @@ git submodule add https://github.com/kamilianos/fp-enthusiast themes/fp-enthusia
 ```toml
 [module]
   [[module.imports]]
-    path = "github.com/kamilianos/fp-enthusiast"
+    path = "github.com/K0Stek122/fp-enthusiast-hugo-theme"
 ```
 
 ```sh
-hugo mod get github.com/kamilianos/fp-enthusiast
+hugo mod get github.com/K0Stek122/fp-enthusiast-hugo-theme
 ```
 
 **Plain clone**
 
 ```sh
-git clone https://github.com/kamilianos/fp-enthusiast themes/fp-enthusiast
+git clone https://github.com/K0Stek122/fp-enthusiast-hugo-theme themes/fp-enthusiast
 ```
 
 Then set `theme = "fp-enthusiast"` in your site config.
@@ -175,7 +175,7 @@ manual override stored in `localStorage`. Remove the button from
 - [ ] Series / collection navigation
 - [ ] Per-post table of contents partial (opt-in)
 
-See the [open issues](https://github.com/kamilianos/fp-enthusiast/issues) for the
+See the [open issues](https://github.com/K0Stek122/fp-enthusiast-hugo-theme/issues) for the
 full list.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -200,9 +200,9 @@ Font License 1.1; their license texts are in `static/fonts/`.
 
 ## Contact
 
-Project Link: [https://github.com/kamilianos/fp-enthusiast](https://github.com/kamilianos/fp-enthusiast)
+Project Link: [https://github.com/K0Stek122/fp-enthusiast-hugo-theme](https://github.com/K0Stek122/fp-enthusiast-hugo-theme)
 
-Maintainer: [@kamilianos](https://github.com/kamilianos)
+Maintainer: [@K0Stek122](https://github.com/K0Stek122)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -214,10 +214,10 @@ Maintainer: [@kamilianos](https://github.com/kamilianos)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-[license-shield]: https://img.shields.io/github/license/kamilianos/fp-enthusiast.svg?style=for-the-badge
-[license-url]: https://github.com/kamilianos/fp-enthusiast/blob/main/LICENSE
+[license-shield]: https://img.shields.io/github/license/K0Stek122/fp-enthusiast-hugo-theme.svg?style=for-the-badge
+[license-url]: https://github.com/K0Stek122/fp-enthusiast-hugo-theme/blob/main/LICENSE
 [hugo-shield]: https://img.shields.io/badge/Hugo-0.158+-ff4088?style=for-the-badge&logo=hugo&logoColor=white
 [hugo-url]: https://gohugo.io/
 [netlify-shield]: https://img.shields.io/badge/deploy-netlify-00c7b7?style=for-the-badge&logo=netlify&logoColor=white
-[netlify-url]: https://fp-enthusiast.netlify.app
+[netlify-url]: https://fp-enthusiast-hugo-theme.netlify.app
 [product-screenshot]: images/screenshot.png

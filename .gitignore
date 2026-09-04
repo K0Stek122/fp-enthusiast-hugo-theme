@@ -1,8 +1,9 @@
 /public/
+/exampleSite/public/
 /resources/
+/exampleSite/resources/
 .hugo_build.lock
 .DS_Store
+*.swp
 node_modules/
-themes/fp-enthusiast/exampleSite/public/
-themes/fp-enthusiast/exampleSite/resources/
-themes/fp-enthusiast/.htm-shots/
+.htm-shots/

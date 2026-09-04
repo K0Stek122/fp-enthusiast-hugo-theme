@@ -1,13 +1,13 @@
 name = "FP Enthusiast"
 license = "MIT"
-licenselink = "https://github.com/kamilianos/fp-enthusiast/blob/main/LICENSE"
+licenselink = "https://github.com/K0Stek122/fp-enthusiast-hugo-theme/blob/main/LICENSE"
 description = "A cosy, centred, single-column reading theme on a warm paper palette. SEO-complete and near-zero JavaScript (one optional dark-mode toggle)."
-homepage = "https://github.com/kamilianos/fp-enthusiast"
-demosite = "https://fp-enthusiast.netlify.app"
+homepage = "https://github.com/K0Stek122/fp-enthusiast-hugo-theme"
+demosite = "https://fp-enthusiast-hugo-theme.netlify.app"
 tags = ["blog", "minimal", "responsive", "dark mode", "seo", "clean", "typography", "personal", "serif"]
 features = ["blog", "dark mode", "seo", "open graph", "json-ld", "rss", "self-hosted fonts", "no build step"]
 min_version = "0.158.0"
 
 [author]
-  name = "kamilianos"
-  homepage = "https://github.com/kamilianos"
+  name = "K0Stek122"
+  homepage = "https://github.com/K0Stek122"
